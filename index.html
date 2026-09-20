@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Thread &mdash; How Clothing Became an Art, an Industry, and a Voice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#120E14;--bg2:#1C161F;--bg3:#130F16;
+    --glow:rgba(201,161,91,.13);--cover-glow:rgba(201,161,91,.42);
+    --crimson:#C9A15B;--crimson-lite:#E2C287;--crimson-deep:#8F6B2C;
+    --gold:#B5546A;--gold-lite:#D07E92;--vital:#6FA8A0;--vital-lite:#95C6BF;
+    --cloud:#F5F7FA;--panel:#F7F3EC;--ink:#1E1622;--ink-soft:#544a5c;
+    --line:rgba(255,255,255,.14);--shadow:0 18px 44px rgba(20,4,10,.5);
+    --hero1:#1C161F;--hero2:#2C2233;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--cloud);background:var(--bg1);
+    background-image:radial-gradient(1200px 600px at 50% -10%, var(--glow), transparent 60%),
+      linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 44%,var(--bg3) 100%);
+    min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 16px 130px}
+
+  /* Cover */
+  #cover{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;
+    background:radial-gradient(900px 520px at 50% 116%, var(--cover-glow), transparent 60%),linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 60%,var(--bg3) 100%)}
+  .cover-in{max-width:540px;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .ecg-cover{width:100%;max-width:360px;height:60px;margin:0 auto 6px;display:block}
+  .ecg-cover path{fill:none;stroke:var(--crimson-lite);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:1400;stroke-dashoffset:1400;animation:trace 2.6s ease-out .3s forwards}
+  @keyframes trace{to{stroke-dashoffset:0}}
+  .cover-eyebrow{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--crimson-lite);margin:14px 0 6px}
+  .cover h1{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:clamp(34px,9.5vw,58px);line-height:.96;margin:0;color:#fff}
+  .cover h1 span{color:var(--crimson-lite)}
+  .cover-sub{color:#e8cdd6;font-size:15px;line-height:1.55;margin:14px auto 4px;max-width:440px}
+  .verse{font-family:'Fraunces',Georgia,serif;font-style:italic;color:#f4e0d6;font-size:16px;line-height:1.55;margin:20px auto 2px;max-width:440px}
+  .verse b{display:block;font-family:'Saira Condensed',sans-serif;font-style:normal;font-weight:600;letter-spacing:.2em;font-size:11px;color:var(--crimson-lite);margin-top:8px;text-transform:uppercase}
+  .field{margin:18px auto 0;max-width:340px;text-align:left}
+  .field label{display:block;font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#d3aeb9;margin:0 4px 6px}
+  .field input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:16px;font-family:inherit}
+  .field input:focus{outline:none;border-color:var(--crimson);background:rgba(255,255,255,.1)}
+  .btn{cursor:pointer;border:none;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .btn-go{display:inline-block;margin-top:22px;padding:15px 40px;border-radius:999px;font-size:16px;color:#2a0810;background:linear-gradient(180deg,var(--crimson-lite),var(--crimson));box-shadow:0 10px 26px rgba(0,0,0,.4)}
+  .btn-go:active{transform:translateY(1px)}
+  .cover-foot{margin-top:16px;font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;font-size:11px;color:#a6808c;text-transform:uppercase}
+
+  /* Hero */
+  .hero{position:relative;padding:26px 20px 22px;margin:16px 0 6px;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,var(--hero1) 0%,var(--hero2) 100%);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .hero:before{content:"";position:absolute;left:-10%;right:-10%;bottom:-40%;height:80%;background:radial-gradient(closest-side, var(--cover-glow), transparent);pointer-events:none}
+  .hero-mon{position:absolute;top:0;left:0;right:0;height:44px;opacity:.5;pointer-events:none}
+  .hero-mon path{fill:none;stroke:var(--vital-lite);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .hero-top{position:relative;display:flex;align-items:center;gap:10px;z-index:2}
+  .hero-badge{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;font-size:12px;color:#f0d3db;border:1px solid rgba(255,255,255,.22);padding:5px 10px;border-radius:8px;background:rgba(0,0,0,.18)}
+  .edit{margin-left:auto;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#e6ccd4;border-radius:9px;padding:7px 11px;font-size:12px;cursor:pointer;font-family:'Saira Condensed',sans-serif;letter-spacing:.12em}
+  .hero h2{position:relative;z-index:2;font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:clamp(26px,7vw,40px);line-height:1;margin:16px 0 2px}
+  .hero h2 small{display:block;font-size:13px;letter-spacing:.28em;color:var(--crimson-lite);font-weight:600;margin-bottom:5px}
+  .hero-mission{position:relative;z-index:2;font-family:'Fraunces',serif;font-style:italic;color:#f2d9c9;font-size:15px;margin-top:8px;line-height:1.5;min-height:1px}
+  .hero-mission b{color:var(--gold-lite);font-style:normal;font-weight:600}
+  .gauge{position:relative;z-index:2;margin-top:16px}
+  .gauge-top{display:flex;justify-content:space-between;align-items:baseline;font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;font-size:12px;color:#e6ccd4;text-transform:uppercase}
+  .gauge-top b{color:var(--gold-lite);font-size:15px}
+  .bar{height:10px;border-radius:999px;background:rgba(0,0,0,.3);margin-top:8px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+  .bar > i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--vital),var(--crimson-lite),var(--gold));transition:width .8s cubic-bezier(.2,.7,.2,1)}
+
+  /* Tabs */
+  .tabs{position:sticky;top:0;z-index:20;display:flex;gap:6px;padding:10px 4px;margin:8px -4px 6px;overflow-x:auto;background:linear-gradient(180deg,var(--bg1),rgba(23,9,18,.72));backdrop-filter:blur(8px);scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#e0c2cb;font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;padding:10px 14px;border-radius:11px;white-space:nowrap;transition:.2s}
+  .tab.on{background:linear-gradient(180deg,var(--crimson-lite),var(--crimson));color:#2a0810;border-color:transparent}
+  .view{display:none;animation:fade .35s ease both}
+  .view.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .lead{font-family:'Fraunces',serif;font-style:italic;font-size:16px;line-height:1.5;color:#f0e2ea;margin:14px 6px 20px}
+
+  /* Timeline (ECG spine) */
+  .era{position:relative;margin-bottom:12px}
+  .era-head{position:relative;z-index:2;display:flex;align-items:baseline;gap:12px;padding:6px 2px 12px}
+  .era-decade{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:30px;color:var(--gold-lite);line-height:1}
+  .era-theme{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.04em;font-size:15px;color:#e9cfd8;text-transform:uppercase}
+  .beat{position:relative;padding-left:56px;margin-bottom:10px}
+  .beat .spine{position:absolute;left:20px;top:-6px;bottom:-16px;width:2px;background:linear-gradient(180deg,rgba(228,87,110,.15),var(--crimson) 40%,var(--crimson) 60%,rgba(228,87,110,.15))}
+  .beat .pulse{position:absolute;left:9px;top:16px;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--hero2), var(--hero1));border:2px solid var(--crimson);z-index:2}
+  .beat.read .pulse{background:linear-gradient(180deg,var(--vital-lite),var(--vital));border-color:var(--vital-lite)}
+  .beat .pulse:after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:var(--crimson-lite);transform:translate(-50%,-50%)}
+  .beat.read .pulse:after{background:#0d3a33}
+  .mrow{cursor:pointer;background:var(--panel);color:var(--ink);border-radius:14px;padding:13px 15px;box-shadow:0 12px 26px rgba(20,4,10,.32);display:flex;align-items:center;gap:12px;transition:transform .12s}
+  .mrow:active{transform:scale(.99)}
+  .mrow .yr{flex:0 0 auto;font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--crimson-deep);width:46px}
+  .mrow .mtitle{flex:1;font-size:15px;line-height:1.35;font-weight:600;color:var(--ink)}
+  .mrow .tagp{display:inline-block;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.06em;font-size:10px;padding:2px 7px;border-radius:5px;margin-top:5px;text-transform:uppercase}
+  .p-us{background:rgba(196,50,75,.14);color:var(--crimson-deep)}
+  .p-int{background:rgba(63,184,160,.16);color:#1f7a6c}
+  .mrow .chev{flex:0 0 auto;color:var(--crimson-deep);font-size:24px;font-weight:700;opacity:.6}
+
+  /* Frontier / Problems cards */
+  .fcard{position:relative;cursor:pointer;background:var(--panel);color:var(--ink);border-radius:16px;padding:16px 16px 16px 58px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .fcard .ic{position:absolute;left:15px;top:16px;width:30px;height:30px;font-size:19px;display:flex;align-items:center;justify-content:center}
+  .fcard h4{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:19px;margin:0 0 3px;color:var(--ink)}
+  .fcard p{font-size:13.5px;line-height:1.5;color:#4a3038;margin:0}
+  .fcard .chev{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--crimson-deep);font-size:24px;font-weight:700;opacity:.55}
+  .ptag{display:inline-block;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:10px;padding:3px 9px;border-radius:6px;margin-bottom:7px}
+  .t-open{background:rgba(228,199,119,.24);color:#8a6412}
+  .t-near{background:rgba(63,184,160,.18);color:#1f7a6c}
+
+  /* Mission tab */
+  .m-head{background:linear-gradient(180deg,var(--hero2),var(--hero1));border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .m-head:before{content:"\2702";position:absolute;top:-14px;right:6px;font-size:120px;color:rgba(255,255,255,.05);line-height:1}
+  .m-head h3{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:25px;margin:0 0 6px;color:var(--crimson-lite)}
+  .m-head p{font-size:14.5px;line-height:1.55;color:#e6d2da;margin:0}
+  .m-current{background:rgba(228,199,119,.1);border:1px solid rgba(228,199,119,.4);border-radius:14px;padding:16px;margin-bottom:16px}
+  .m-current .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--gold-lite);margin-bottom:6px}
+  .m-current .val{font-family:'Fraunces',serif;font-style:italic;font-size:19px;line-height:1.4;color:#fff}
+  .m-current .val b{font-style:normal;font-weight:600;color:var(--gold-lite)}
+  .mopt{cursor:pointer;background:var(--panel);color:var(--ink);border-radius:14px;padding:15px 16px;margin-bottom:11px;box-shadow:0 12px 26px rgba(20,4,10,.3);border:2px solid transparent;transition:.15s;position:relative}
+  .mopt.sel{border-color:var(--gold);box-shadow:0 0 0 3px rgba(228,199,119,.3),0 12px 26px rgba(20,4,10,.3)}
+  .mopt h5{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:17px;margin:0 0 3px;color:var(--ink)}
+  .mopt p{font-size:13.5px;line-height:1.45;color:#4a3038;margin:0}
+  .mopt .pick{margin-top:9px;display:inline-block;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--crimson-deep)}
+  .mopt.sel .pick{color:#1f7a6c}
+  .mopt.sel .pick:before{content:"\2713 "}
+
+  /* Mentors */
+  .hero-story{position:relative;cursor:pointer;background:linear-gradient(180deg,var(--hero2),var(--hero1));border:1px solid var(--gold);border-radius:18px;padding:22px 20px;margin-bottom:20px;box-shadow:var(--shadow);overflow:hidden}
+  .hero-story:before{content:"\2702";position:absolute;top:-16px;right:2px;font-size:110px;color:rgba(228,199,119,.08);line-height:1}
+  .hs-eyebrow{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--gold-lite)}
+  .hero-story h3{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:27px;margin:5px 0 7px;color:#fff}
+  .hero-story p{font-size:14.5px;line-height:1.55;color:#e9d3c8;margin:0 0 12px;max-width:92%}
+  .hs-open{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:#2a0810;background:linear-gradient(180deg,var(--gold-lite),var(--gold));padding:9px 15px;border-radius:9px;display:inline-block}
+  .mentor-h{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px;color:var(--crimson-lite);margin:6px 2px 14px}
+  .res{background:var(--panel);color:var(--ink);border-radius:15px;padding:16px 17px;margin-bottom:13px;box-shadow:var(--shadow)}
+  .res .now{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#2a0810;background:var(--gold-lite);display:inline-block;padding:4px 10px;border-radius:7px;margin-bottom:8px;font-weight:700}
+  .res h4{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:18px;margin:0 0 2px;color:var(--ink)}
+  .res .tagline{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;font-size:12px;color:var(--crimson-deep);text-transform:uppercase;margin-bottom:8px}
+  .res p{font-size:14px;line-height:1.5;color:#3a2028;margin:0 0 10px}
+  .res .fact{font-size:13px;color:var(--ink-soft);margin:0 0 4px;padding-left:20px;position:relative}
+  .res .fact:before{content:"\2714";position:absolute;left:0;top:0;color:var(--crimson-deep)}
+  .res a{display:inline-block;margin-top:8px;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:#2a0810;text-decoration:none;background:linear-gradient(180deg,var(--gold-lite),var(--gold));padding:9px 16px;border-radius:9px}
+  .scrip{margin:8px 2px 0;padding:14px 15px;border-left:3px solid var(--crimson);background:rgba(0,0,0,.2);border-radius:0 12px 12px 0}
+  .scrip p{font-family:'Fraunces',serif;font-style:italic;font-size:15px;line-height:1.5;color:#f4e6ee;margin:0}
+  .scrip b{display:block;font-family:'Saira Condensed',sans-serif;font-style:normal;letter-spacing:.16em;font-size:11px;color:var(--crimson-lite);margin-top:7px;text-transform:uppercase}
+
+  /* Brief screen */
+  .brief-screen{position:fixed;inset:0;z-index:70;background:linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+  .brief-screen.open{transform:none}
+  .brief-bar{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:16px 16px 10px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.25)}
+  .back{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#f0dae1;border-radius:10px;padding:9px 14px;font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:13px;cursor:pointer}
+  .brief-tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.08em;font-size:12px;color:#2a0810;background:linear-gradient(180deg,var(--gold-lite),var(--gold));padding:5px 11px;border-radius:8px}
+  .brief-body{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px 18px 32px;max-width:780px;width:100%;margin:0 auto}
+  .brief-eyebrow{font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--crimson-lite)}
+  .brief-title{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:clamp(26px,7vw,38px);line-height:1.02;margin:6px 0 4px;color:#fff}
+  .brief-meta{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;font-size:12.5px;color:var(--vital-lite);text-transform:uppercase;margin-bottom:16px}
+  .blk{background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:13px}
+  .blk-h{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--crimson-lite);margin:0 0 9px;display:flex;align-items:center;gap:7px}
+  .blk p{margin:0;font-size:15px;line-height:1.58;color:#f0e2ea}
+  .factline{display:flex;gap:9px;align-items:flex-start;font-size:14px;color:#e8d6de;margin-bottom:7px;line-height:1.45}
+  .factline:last-child{margin-bottom:0}
+  .factline b{color:var(--gold-lite);flex:0 0 auto}
+  .q{margin-bottom:6px}
+  .q .qq{font-size:15px;font-weight:600;color:#fff;margin-bottom:9px;line-height:1.4}
+  .opt{display:block;width:100%;text-align:left;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#f0e2ea;border-radius:10px;padding:11px 13px;margin-bottom:7px;font-size:14.5px;cursor:pointer;font-family:inherit;transition:.15s}
+  .opt.correct{background:rgba(63,184,160,.32);border-color:var(--vital);color:#fff}
+  .opt.wrong{background:rgba(196,50,75,.3);border-color:var(--crimson-lite)}
+  .opt:disabled{cursor:default}
+  .qex{font-size:13.5px;color:#e0c2cb;margin-top:7px;line-height:1.5;display:none}
+  .qex.show{display:block}
+  .lnk{display:inline-block;margin:0 8px 8px 0;font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.05em;font-size:14px;color:#f0dae1;text-decoration:none;background:rgba(255,255,255,.06);border:1px solid var(--line);padding:10px 14px;border-radius:10px}
+  .lnk:after{content:" \2197";color:var(--gold-lite)}
+  .brief-scrip{background:rgba(0,0,0,.24);border-left:3px solid var(--crimson);border-radius:0 12px 12px 0;padding:14px 15px;margin-bottom:6px}
+  .brief-scrip p{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:#f4e6ee;margin:0;line-height:1.55}
+  .brief-scrip b{display:block;font-family:'Saira Condensed',sans-serif;font-style:normal;letter-spacing:.14em;font-size:11px;color:var(--crimson-lite);margin-top:7px;text-transform:uppercase}
+  .say{margin-top:4px;background:none;border:1px solid var(--crimson-lite);color:var(--crimson-lite);border-radius:8px;padding:7px 13px;font-size:12px;cursor:pointer;font-family:'Saira Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+  .brief-foot{flex:0 0 auto;padding:14px 16px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(0,0,0,.3)}
+  .foot-btn{width:100%;max-width:744px;margin:0 auto;display:block;padding:15px;border-radius:13px;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:15px;cursor:pointer;border:none}
+  .foot-btn.claim{color:#2a0810;background:linear-gradient(180deg,var(--gold-lite),var(--gold))}
+  .foot-btn.claimed{color:#eaf0f6;background:rgba(63,184,160,.3);border:1px solid var(--vital)}
+
+  .footer{text-align:center;margin-top:26px;font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;font-size:11px;color:#8a6874;text-transform:uppercase}
+  #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);z-index:80;background:linear-gradient(180deg,var(--gold-lite),var(--gold));color:#2a0810;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.06em;padding:12px 20px;border-radius:12px;box-shadow:0 14px 30px rgba(0,0,0,.45);opacity:0;transition:.35s;font-size:14px;max-width:88%;text-align:center}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  #cfx{position:fixed;inset:0;pointer-events:none;z-index:75}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.ecg-cover path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<section id="cover">
+  <div class="cover-in">
+    <svg class="ecg-cover" viewBox="0 0 360 60" aria-hidden="true"><path d="M6,30 L34,30 M50,30 L78,30 M94,30 L122,30 M138,30 L166,30 M182,30 L210,30 M226,30 L254,30 M270,30 L298,30 M314,30 L342,30"/></svg>
+    <div class="cover-eyebrow">A living history of fashion</div>
+    <h1>THE<br><span>THREAD</span></h1>
+    <p class="cover-sub">From the first designer to sign his name in a garment, to the African houses reshaping luxury now &mdash; and the problems still waiting for the next designer. Made for a young maker to find her calling.</p>
+    <div class="verse">&ldquo;She shall be brought unto the king in raiment of needlework.&rdquo;<b>Psalm 45:14</b></div>
+    <div class="field">
+      <label for="nm">Who is exploring today?</label>
+      <input id="nm" type="text" placeholder="Enter your name" autocomplete="off" />
+    </div>
+    <button class="btn btn-go" id="begin">Begin the journey</button>
+    <div class="cover-foot">For Flourish &amp; family &middot; Glory to God alone</div>
+  </div>
+</section>
+
+<div class="wrap" id="app" style="display:none">
+  <div class="hero">
+    <svg class="hero-mon" viewBox="0 0 780 44" preserveAspectRatio="none" aria-hidden="true"><path d="M10,22 L54,22 M74,22 L118,22 M138,22 L182,22 M202,22 L246,22 M266,22 L310,22 M330,22 L374,22 M394,22 L438,22 M458,22 L502,22 M522,22 L566,22 M586,22 L630,22 M650,22 L694,22 M714,22 L758,22"/></svg>
+    <div class="hero-top"><span class="hero-badge" id="badge">&#9986; The Thread</span><button class="edit" id="editBtn">Edit</button></div>
+    <h2><small>The story so far, maker</small><span id="heroName">&nbsp;</span></h2>
+    <div class="hero-mission" id="heroMission"></div>
+    <div class="gauge"><div class="gauge-top"><span>Story explored</span><b id="pct">0%</b></div><div class="bar"><i id="barFill"></i></div></div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-v="story">The Story</button>
+    <button class="tab" data-v="frontier">The Frontier</button>
+    <button class="tab" data-v="problems">Open Problems</button>
+    <button class="tab" data-v="mentors">Mentors</button>
+    <button class="tab" data-v="mission">Your Mission</button>
+  </div>
+
+  <div class="view on" id="v-story">
+    <p class="lead">A line of stitching runs down this page. Every stitch is a moment that changed what clothing means &mdash; in Paris, in New York, in Lagos. Tap any one to open its story.</p>
+    <div id="timeline"></div>
+  </div>
+  <div class="view" id="v-frontier">
+    <p class="lead">Where fashion is heading in the next ten years &mdash; and which skills survive machines that can already draw. Tap to go deeper.</p>
+    <div id="frontierList"></div>
+  </div>
+  <div class="view" id="v-problems">
+    <p class="lead">These are the great unsolved challenges of fashion. Not dead ends &mdash; invitations. Read each one and ask: <em>could this be mine?</em></p>
+    <div id="problemList"></div>
+  </div>
+  <div class="view" id="v-mentors">
+    <p class="lead">No one builds alone. Here is a woman who walked this road before her &mdash; and real doors, from her own city to Lagos.</p>
+    <div class="hero-story" id="carsonCard">
+      <div class="hs-eyebrow">A story to carry</div>
+      <h3>Ann Lowe</h3>
+      <p>She made the most photographed wedding dress in history. The world printed the dress and left out her name. Tap to read the most important story in this app.</p>
+      <span class="hs-open">Read his story &#8250;</span>
+    </div>
+    <div class="mentor-h">Find your mentors</div>
+    <div id="mentorList"></div>
+    <div class="scrip" style="margin-top:6px"><p>&ldquo;Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.&rdquo;</p><b>Proverbs 27:17</b></div>
+  </div>
+  <div class="view" id="v-mission">
+    <div class="m-head"><h3>Choose your mountain</h3><p>The best designers don&rsquo;t just make beautiful things &mdash; they carry a problem their whole life. Pick the one that stirs you most. It becomes your north star, from day one.</p></div>
+    <div class="m-current" id="mCurrent" style="display:none"><div class="lbl">Flourish&rsquo;s mission</div><div class="val" id="mCurrentVal"></div></div>
+    <div id="missionList"></div>
+  </div>
+  <div class="footer">The Thread &middot; v1 &middot; Glory to God alone</div>
+</div>
+
+<div class="brief-screen" id="brief" aria-hidden="true">
+  <div class="brief-bar"><button class="back" id="backBtn">&larr; Back</button><span class="brief-tag" id="briefTag"></span></div>
+  <div class="brief-body" id="briefBody"></div>
+  <div class="brief-foot" id="briefFoot" style="display:none"><button class="foot-btn claim" id="claimBtn">Make this my mission</button></div>
+</div>
+<div id="toast"></div>
+<canvas id="cfx"></canvas>
+
+<script>
+function lsGet(k){try{return window.localStorage.getItem(k);}catch(e){return null;}}
+function lsSet(k,v){try{window.localStorage.setItem(k,v);}catch(e){}}
+var K={name:'th_name',read:'th_read',mission:'th_mission'};
+var state={name:'',read:{},mission:''};
+function loadState(){state.name=lsGet(K.name)||'';state.mission=lsGet(K.mission)||'';
+  try{state.read=JSON.parse(lsGet(K.read)||'{}');}catch(e){state.read={};}}
+function saveRead(){lsSet(K.read,JSON.stringify(state.read));}
+
+/* ---------------- DATA ---------------- */
+var ERAS=[
+ {decade:'1850s\u20131900s',theme:'The designer is invented',beats:[
+  {id:'t1846',yr:'1846\u201351',place:'us',title:'The sewing machine changes everything',
+   brief:{eyebrow:'Clothing for everyone',why:'Before the sewing machine, every garment on earth was sewn by hand, which made clothing slow, costly and precious. Machines made by Elias Howe and Isaac Singer changed that completely. Within a generation, ordinary people could own more than two or three garments. Every ready-to-wear shop, every factory, and every fast-fashion chain that came later begins here.',
+     facts:[['Before','Every stitch by hand'],['After','Clothing becomes affordable and mass-produced'],['The shadow','The garment factory \u2014 and its abuses \u2014 is also born here']]}},
+  {id:'t1858',yr:'1858',place:'int',title:'Charles Worth invents haute couture',
+   brief:{eyebrow:'The birth of the fashion house',why:'An Englishman in Paris, Charles Frederick Worth, did something nobody had done: instead of sewing what clients demanded, he designed collections, showed them on live models, and sewed his own label into the garments. He turned the dressmaker into an author and the dress into a signed work. Every fashion house that follows \u2014 Dior, Chanel, and one day perhaps Flourish\u2019s own \u2014 is built on what he started.',
+     facts:[['Who','Charles Frederick Worth, Paris'],['The inventions','Seasonal collections, live models, the designer label'],['Why it matters','The designer became the author of the garment']],
+     quiz:[{q:'What did Worth do that made him the first true fashion designer?',opts:['He sewed faster','He put his own label in the garment and designed collections','He invented the sewing machine'],a:1,ex:'He signed his work and presented collections \u2014 turning dressmaking into authorship. That is what a fashion house is.'}],
+     scrip:{t:'Them hath he filled with wisdom of heart, to work all manner of work.',r:'Exodus 35:35'}}}
+ ]},
+ {decade:'1900s\u201320s',theme:'Women are set free',beats:[
+  {id:'t1906',yr:'1906',place:'int',title:'Poiret abandons the corset',
+   brief:{eyebrow:'A body released',why:'Paul Poiret designed dresses that hung from the shoulders rather than squeezing the waist, helping end the era of the tightly corseted body. It is one of the clearest examples of something fashion does again and again: change what a body is allowed to be.',
+     facts:[['The change','Clothing that hangs from the shoulder, not the waist'],['The lesson','Fashion does not just decorate bodies \u2014 it governs them']]}},
+  {id:'t1926',yr:'1920s',place:'int',title:'Chanel and Vionnet rewrite the rules',
+   brief:{eyebrow:'Simplicity and the bias cut',why:'Coco Chanel used humble jersey fabric and simple lines to make elegance out of ease, and popularised the little black dress. Madeleine Vionnet did something quieter but more technical: she cut fabric on the bias \u2014 diagonally across the weave \u2014 so it flowed and clung to the body without corsetry. Vionnet is the designer other designers study, because her genius was in the cut itself.',
+     facts:[['Chanel','Jersey, simplicity, the little black dress'],['Vionnet','The bias cut \u2014 pure technical mastery'],['For Flourish','Vionnet proves that construction IS design']]}}
+ ]},
+ {decade:'1930s\u201350s',theme:'Mastery and the New Look',beats:[
+  {id:'t1947',yr:'1947',place:'int',title:'Dior\u2019s New Look',
+   brief:{eyebrow:'A silhouette that shook the world',why:'After the fabric rationing of war, Christian Dior showed tiny waists and enormous skirts using yards of material. It was criticised as wasteful and celebrated as hopeful, and it restored Paris as the centre of fashion. It shows how a collection can capture a moment a whole society is feeling.',
+     facts:[['The silhouette','Tiny waist, full skirt, extravagant fabric'],['The context','Just after wartime rationing'],['The lesson','Great collections answer the mood of their moment']]}},
+  {id:'t1953',yr:'1953',place:'us',title:'The most photographed dress in history \u2014 and a hidden name',
+   brief:{eyebrow:'Ann Lowe',why:'When Jacqueline Bouvier married John F. Kennedy, she wore an ivory silk taffeta gown made of some fifty yards of fabric, with a portrait neckline and intricate interwoven tucking. It became one of the most photographed dresses ever made. The designer was Ann Lowe, a Black American woman \u2014 and she was not credited. Read her full story in the Mentors tab. It is the most important story in this app.',
+     facts:[['The dress','~50 yards of ivory silk taffeta'],['The designer','Ann Lowe, uncredited at the time'],['Her craft','Trapunto, tucking, and hand finishing of the highest order']],
+     scrip:{t:'The stone which the builders refused is become the head stone of the corner.',r:'Psalm 118:22'}}},
+  {id:'t1950',yr:'1950s',place:'int',title:'Balenciaga \u2014 the master of the cut',
+   brief:{eyebrow:'The couturier\u2019s couturier',why:'Crist\u00f3bal Balenciaga was revered by other designers because he could do every part of the work himself \u2014 design, cut, fit and sew. Dior called him the master of them all. His sculptural shapes came from pure technical command of cloth. For a young designer, his career is the argument for learning the hand, not just the eye.',
+     facts:[['Why revered','He could cut and sew every garment himself'],['His signature','Sculptural volume, architectural shapes'],['The lesson','Technical mastery is what makes a designer free']]}}
+ ]},
+ {decade:'1960s\u201370s',theme:'Youth, ready-to-wear, and a night in Versailles',beats:[
+  {id:'t1966',yr:'1960s',place:'int',title:'Ready-to-wear takes over',
+   brief:{eyebrow:'Fashion leaves the salon',why:'Designers such as Yves Saint Laurent opened ready-to-wear boutiques, selling finished garments in standard sizes rather than made-to-measure couture. Youth culture, the miniskirt and mass retail shifted power from a few wealthy clients to millions of ordinary shoppers. Nearly all fashion jobs today exist because of this shift.',
+     facts:[['Couture','Made to measure, for a few'],['Ready-to-wear','Standard sizes, for millions'],['Result','The modern fashion industry']]}},
+  {id:'t1973',yr:'1973',place:'int',title:'The Battle of Versailles',
+   brief:{eyebrow:'The night the rules changed',why:'A fundraising fashion show at the Palace of Versailles pitted five French couture houses against five American designers. The French show was lavish and long; the American one was short, modern and set to music, and it was carried by its models \u2014 a large number of whom were Black, dancing rather than merely walking. The Americans stunned the room. It broke the assumption that fashion authority belonged to Paris alone, and it put Black models and American design permanently on the world stage.',
+     facts:[['Where','The Palace of Versailles, France'],['What changed','American design taken seriously; Black models centred'],['The lesson','An outsider with a point of view can beat the establishment']],
+     quiz:[{q:'What made the American show at Versailles so powerful?',opts:['It was longer and more expensive','It was modern, musical, and carried by its models','It used older designers'],a:1,ex:'Energy and point of view beat budget and tradition \u2014 and Black models were central to that triumph.'}]}}
+ ]},
+ {decade:'1980s\u201390s',theme:'The world arrives, and the brand takes over',beats:[
+  {id:'t1981',yr:'1980s',place:'int',title:'Japan disrupts Paris',
+   brief:{eyebrow:'Another way to see clothing',why:'Rei Kawakubo of Comme des Gar\u00e7ons and Yohji Yamamoto arrived in Paris with black, asymmetric, deliberately imperfect clothing that ignored Western ideas of beauty and the fitted female body. Critics were hostile at first. They changed fashion permanently \u2014 proof that a designer from outside the European tradition can reset the whole conversation.',
+     facts:[['Who','Rei Kawakubo, Yohji Yamamoto'],['The shock','Black, asymmetric, anti-glamour'],['For Flourish','Outsiders with conviction rewrite the rules']]}},
+  {id:'t1987',yr:'1987\u201390s',place:'int',title:'Luxury becomes big business',
+   brief:{eyebrow:'From ateliers to conglomerates',why:'Great houses were gathered into enormous luxury groups, and fashion became a global business of brands, licences, handbags and fragrance. Designers such as Alexander McQueen and John Galliano were installed at historic houses to make them exciting again. It explains why creative directors matter so much today \u2014 and why business sense is inseparable from design.',
+     facts:[['The shift','Independent houses become parts of luxury groups'],['The role born here','The celebrity creative director'],['The truth','Fashion is an art form financed by commerce']]}},
+  {id:'t1990',yr:'1990s',place:'int',title:'Fast fashion arrives',
+   brief:{eyebrow:'Cheaper, faster, endless',why:'Global chains learned to copy runway ideas and deliver them to shops within weeks at low prices. Clothing became cheaper than at any point in human history, and people began buying far more of it and keeping it far less time. Everything good and everything terrible about fashion today flows from this change.',
+     facts:[['The model','Copy quickly, produce cheaply, sell enormous volume'],['The cost','Waste, disposability, and pressure on garment workers']]}}
+ ]},
+ {decade:'2010s',theme:'The reckoning',beats:[
+  {id:'t2013',yr:'2013',place:'int',title:'Rana Plaza \u2014 the day fashion had to look at itself',
+   brief:{eyebrow:'The true price of cheap clothing',why:'A garment factory complex called Rana Plaza collapsed in Bangladesh, killing more than a thousand workers who had been making clothes for well-known Western brands. Cracks had been reported the day before and workers were told to return anyway. It forced the industry, and shoppers, to confront who actually pays for cheap clothing. Every serious conversation about ethical fashion today traces back to this.',
+     facts:[['Where','Dhaka, Bangladesh, April 2013'],['The toll','More than 1,100 garment workers killed'],['What changed','Factory safety accords, supply-chain transparency, the ethical fashion movement'],['The question it asks','Who made my clothes?']],
+     scrip:{t:'Behold, the hire of the labourers... which is of you kept back by fraud, crieth.',r:'James 5:4'}}},
+  {id:'t2018',yr:'2018',place:'us',title:'A door opens at the top of luxury',
+   brief:{eyebrow:'Representation at the summit',why:'Virgil Abloh, an American designer of Ghanaian parentage who had come up through streetwear rather than couture training, was appointed artistic director of Louis Vuitton menswear \u2014 one of the most powerful creative roles in French luxury, and a position no Black American had held there before. It signalled that the gates of luxury, closed for a century, could open.',
+     facts:[['Who','Virgil Abloh, of Ghanaian parentage'],['The role','Artistic director, Louis Vuitton menswear'],['Why it mattered','The most exclusive rooms in fashion are not sealed forever']]}}
+ ]},
+ {decade:'2020s',theme:'Africa rises, and machines start drawing',beats:[
+  {id:'t2020',yr:'2019\u201320',place:'int',title:'African designers reach the summit of luxury',
+   brief:{eyebrow:'The continent steps forward',why:'Thebe Magugu of South Africa won the LVMH Prize, one of the most significant awards a young designer can receive, and Imane Ayissi of Cameroon was invited to show at Paris haute couture week \u2014 a rare honour for a designer working from sub-Saharan African traditions. Alongside them, Nigerian designers such as Kenneth Ize and Adebayo Oke-Lawal built international followings using African textiles and craft.',
+     facts:[['Thebe Magugu','South Africa \u2014 LVMH Prize winner'],['Imane Ayissi','Cameroon \u2014 invited to Paris haute couture week'],['Nigeria','Kenneth Ize, Adebayo Oke-Lawal and others on global runways']],
+     scrip:{t:'And the Gentiles shall come to thy light, and kings to the brightness of thy rising.',r:'Isaiah 60:3'}}},
+  {id:'t2023',yr:'2023',place:'int',title:'UNESCO comes to Lagos',
+   brief:{eyebrow:'Africa\u2019s fashion economy, counted at last',why:'UNESCO released its first-ever report on the African fashion sector, launching it at Lagos Fashion Week. It valued the continent\u2019s annual textile exports at about $15.5 billion and said earnings could triple within a decade with proper investment. It also named the obstacles honestly: too little investment, weak infrastructure, limited training, poor protection of designs, and difficulty sourcing good materials affordably.',
+     facts:[['Exports','~$15.5 billion a year from Africa'],['Potential','Could triple in a decade with investment'],['Imports','~$23.1 billion of textiles, clothing and footwear coming in'],['The obstacles','Investment, infrastructure, training, design protection']],
+     quiz:[{q:'What did UNESCO say about African fashion\u2019s potential?',opts:['It has peaked','Earnings could triple in a decade with investment','It is too small to measure'],a:1,ex:'About $15.5 billion in exports today, and UNESCO projects it could triple within a decade. Flourish would be entering it at exactly the right moment.'}],
+     map:{lat:6.4281,lng:3.4219,addr:'Lagos, Nigeria \u2014 home of Lagos Fashion Week'}}},
+  {id:'t2026',yr:'2024\u201326',place:'us',title:'Machines learn to draw clothes',
+   brief:{eyebrow:'What AI can and cannot take',why:'AI now generates fashion imagery, mood boards and trend reports in seconds, and 3D tools let designers sample garments digitally before cutting any cloth. But a model cannot cut a pattern that fits a living body, pin a toile on a form, judge the weight of a cloth in the hand, or stand in a factory and decide what is good enough to ship. The image is cheap now. The hand and the judgement are not.',
+     facts:[['Automated','Mood boards, trend collage, fashion imagery'],['Accelerated','3D sampling and digital fitting tools'],['Still human','Cutting, fitting, construction, fabric judgement, taste'],['The lesson','Aim at the hands and the judgement']],
+     scrip:{t:'And all the women that were wise hearted did spin with their hands.',r:'Exodus 35:25'}}}
+ ]}
+];
+var FRONTIER=[
+ {id:'f-craft',ic:'\ud83e\uddf5',tag:'Durable',tagc:'t-near',h:'The hand becomes premium',p:'As machines flood the world with images, real craft grows rarer and more valuable.',
+  brief:{eyebrow:'The next ten years',why:'When anyone can generate a picture of a garment, the ability to actually make one beautifully becomes the scarce thing. Couture-level construction, patternmaking and finishing are the skills AI cannot reach.'}},
+ {id:'f-africa',ic:'\ud83c\udf0d',tag:'Rising',tagc:'t-near',h:'Luxury made in Africa',p:'Heritage craft, global demand, and a continent building its own houses.',
+  brief:{eyebrow:'The next ten years',why:'UNESCO projects African fashion earnings could triple in a decade. The opportunity is not only to design African-inspired clothing but to build the production capacity, training and brands on the continent itself.'}},
+ {id:'f-3d',ic:'\ud83d\udcbb',tag:'Near',tagc:'t-near',h:'3D design & digital sampling',p:'Design and fit a garment on screen before cutting any cloth.',
+  brief:{eyebrow:'The next ten years',why:'Tools like CLO 3D and Browzwear are now industry standard. They cut waste dramatically and make a young designer instantly employable.'}},
+ {id:'f-sust',ic:'\u267b\ufe0f',tag:'Urgent',tagc:'t-near',h:'Circular fashion',p:'Clothes designed to be repaired, resold, and remade.',
+  brief:{eyebrow:'The next ten years',why:'Regulation and consumer pressure are pushing brands toward durability, repair and recycling. Designers who understand circularity will be the ones hired.'}},
+ {id:'f-fit',ic:'\ud83d\udccf',tag:'Near',tagc:'t-near',h:'Real fit for real bodies',p:'Body scanning and made-to-measure at scale.',
+  brief:{eyebrow:'The next ten years',why:'Poor fit drives enormous returns and waste. Technology that tailors garments to actual bodies is one of the largest opportunities in the industry.'}},
+ {id:'f-mat',ic:'\ud83c\udf31',tag:'Open',tagc:'t-open',h:'New materials',p:'Leather from mushrooms, fibres from waste, dyes without poison.',
+  brief:{eyebrow:'The next ten years',why:'Materials innovation may be the single biggest lever on fashion\u2019s footprint \u2014 and it sits at the meeting point of design, chemistry and craft.'}}
+];
+var PROBLEMS=[
+ {id:'p-credit',ic:'\u270d\ufe0f',tag:'Unfinished',tagc:'t-open',h:'Who gets the credit',p:'Ann Lowe made the most photographed dress in history and was not named.',
+  brief:{eyebrow:'An invitation',why:'Fashion has a long habit of celebrating the garment and erasing the maker \u2014 especially when the maker is Black, African, or a woman working quietly. UNESCO specifically flagged weak protection of designs as a barrier holding African fashion back, while African patterns and techniques are borrowed by global brands without credit or payment. Insisting on credit, and building houses that carry their makers\u2019 names, is real work.',
+    facts:[['The pattern','The dress is famous; the maker is forgotten'],['Today','African designs used globally with little credit or protection'],['The work','Design protection, authorship, and naming your makers']],
+    scrip:{t:'Render therefore to all their dues... honour to whom honour.',r:'Romans 13:7'}}},
+ {id:'p-worker',ic:'\ud83d\udc4b',tag:'Serious',tagc:'t-open',h:'The people who actually sew our clothes',p:'Rana Plaza killed more than a thousand workers. The pressure that caused it has not gone.',
+  brief:{eyebrow:'An invitation',why:'Behind almost every cheap garment is a person, usually a woman, sewing at speed for very little. A designer decides where clothes are made and at what price \u2014 which means a designer decides, in part, how those people live.',
+    facts:[['2013','Rana Plaza, Bangladesh \u2014 over 1,100 killed'],['The pressure','Lower prices and faster turnaround push factories to the edge'],['A designer\u2019s power','You choose the factory, the price, and the timeline']],
+    scrip:{t:'Behold, the hire of the labourers... crieth: and the cries... are entered into the ears of the Lord.',r:'James 5:4'}}},
+ {id:'p-waste',ic:'\ud83d\uddd1\ufe0f',tag:'Unsolved',tagc:'t-open',h:'The mountain of discarded clothing',p:'The world makes far more clothes than it can wear \u2014 and much of the surplus lands in Africa.',
+  brief:{eyebrow:'An invitation',why:'Vast quantities of unwanted secondhand clothing from wealthy countries are shipped to African markets, and a large share is unsellable and becomes waste. Ghana\u2019s Kantamanto market has become the best-known example. A continent celebrated for its textiles is simultaneously used as a dumping ground for the world\u2019s castoffs.',
+    facts:[['The flow','Unsold clothing exported to African markets'],['The result','Enormous textile waste that local systems cannot absorb'],['The irony','Africa exports beautiful cloth and imports the world\u2019s rubbish']]}},
+ {id:'p-build',ic:'\ud83c\udfed',tag:'Opportunity',tagc:'t-near',h:'Africa cannot yet make what it designs',p:'The continent imports more clothing and textiles than it exports.',
+  brief:{eyebrow:'An invitation',why:'UNESCO put African textile exports at about $15.5 billion against roughly $23.1 billion of imports, and named the bottlenecks: investment, infrastructure, training and materials. The designers of the next generation are needed as builders of factories, schools and supply chains, not only as creators of clothes.',
+    facts:[['Exports','~$15.5B'],['Imports','~$23.1B'],['The gap','Production capacity, training, and investment'],['The call','UNESCO asked for more training in quality control, law and marketing']]}},
+ {id:'p-fit',ic:'\ud83d\udc57',tag:'Overlooked',tagc:'t-open',h:'Clothes are cut for very few bodies',p:'Sizing systems are narrow, inconsistent, and often ignore real human variety.',
+  brief:{eyebrow:'An invitation',why:'Most clothing is graded from a narrow set of body assumptions, which leaves enormous numbers of people badly served and drives waste through returns. Patternmakers and technical designers who solve real fit are quietly among the most valuable people in the industry.'}},
+ {id:'p-teach',ic:'\ud83c\udf93',tag:'Needed',tagc:'t-open',h:'The skills are not being passed on',p:'Master tailors and weavers are ageing, and too few young people are learning.',
+  brief:{eyebrow:'An invitation',why:'UNESCO urged African countries to create mentoring schemes so traditional textile skills pass from one generation to the next. Techniques refined over centuries can be lost within one. A designer who learns from the old makers, and then teaches, preserves something irreplaceable.',
+    facts:[['At risk','Weaving, dyeing, embroidery and tailoring traditions'],['The remedy','Apprenticeship and mentoring'],['Start where you are','Learn from a tailor in your own community']],
+    scrip:{t:'One generation shall praise thy works to another.',r:'Psalm 145:4'}}}
+];
+var MISSIONS=[
+ {id:'craft',h:'I will master the hand',p:'Become a designer who can truly make, not only sketch.',line:'to master the hand \u2014 to build with my own two hands what I see in my mind.'},
+ {id:'africa',h:'I will build luxury from Africa',p:'Create a house rooted in African craft that stands with any in the world.',line:'to build a house from Africa that stands with any in the world.'},
+ {id:'credit',h:'I will make sure the makers are named',p:'Fight for credit and protection for designers and artisans.',line:'to see that the makers are named \u2014 that no Ann Lowe is ever hidden again.'},
+ {id:'just',h:'I will make clothes justly',p:'Build a supply chain where everyone who sews is treated with dignity.',line:'to make beautiful clothes without anyone being crushed to make them.'},
+ {id:'clean',h:'I will end fashion\u2019s waste',p:'Design clothes made to last, be repaired, and be remade.',line:'to end the mountain of waste \u2014 clothes made to last and to return.'},
+ {id:'teach',h:'I will carry the craft forward',p:'Learn from the old makers, and teach the young ones.',line:'to carry the craft forward \u2014 learning from the old hands and teaching the young.'}
+];
+var PMAP={'p-credit':'credit','p-worker':'just','p-waste':'clean','p-build':'africa','p-fit':'craft','p-teach':'teach'};
+var CARSON={name:'Ann Lowe',role:'She made the dress the whole world saw \u2014 and no one said her name',
+ brief:{eyebrow:'A story to carry',
+  why:'Ann Cole Lowe was born in Clayton, Alabama in 1898, into a family of seamstresses. Her grandmother had been born into slavery and sewed dresses for the woman who owned her. Ann learned at her mother\u2019s side, and when her mother died with gowns unfinished for the governor\u2019s wife, teenage Ann completed them herself. She went on to become the first African American designer of note in American high fashion, dressing the du Ponts, the Roosevelts, the Rockefellers \u2014 families who would not have invited her to dinner. In 1953 she was hired to make the wedding gown for Jacqueline Bouvier\u2019s marriage to John F. Kennedy: some fifty yards of ivory silk taffeta, a portrait neckline, and bands of intricate tucking that took months. Then, days before the wedding, a flood ruined the gown and the bridesmaids\u2019 dresses in her workroom. She and her team rebuilt all of them in a handful of days, losing every penny of profit and paying thousands out of her own pocket to finish on time. When she delivered the gowns, she was directed to the back entrance and insisted on going through the front. The dress became one of the most photographed garments in history. Her name was not printed. Asked who had made it, the bride described her as a coloured dressmaker. Ann Lowe kept working. She opened her own salon in Harlem, and later a business on Madison Avenue \u2014 the first Black person to do so. She was underpaid for decades, called society\u2019s best-kept secret, and eventually went bankrupt. Today her gowns sit in the Smithsonian\u2019s National Museum of African American History and Culture. She once said plainly that what she wanted was to prove that a Negro can become a major dress designer. She did. It simply took the world seventy years to say her name.',
+  facts:[['Born','1898, Clayton, Alabama \u2014 granddaughter of an enslaved seamstress'],['The gown','Jacqueline Bouvier\u2019s 1953 wedding dress, ~50 yards of silk taffeta'],['The flood','Days before the wedding it destroyed the dresses; she remade them at a loss'],['The credit','None. She was described only as a coloured dressmaker'],['The firsts','First noted African American couture designer; first Black business owner on Madison Avenue'],['Now','Her work is held by the Smithsonian']],
+  quiz:[{q:'What happened days before the Kennedy wedding?',opts:['The dress was cancelled','A flood destroyed the gowns and she remade them at her own cost','She refused to finish it'],a:1,ex:'A flood ruined the gowns. She and her team rebuilt them in days, losing all profit \u2014 and delivered on time.'}],
+  scrip:{t:'The stone which the builders refused is become the head stone of the corner. This is the LORD\u2019S doing; it is marvellous in our eyes.',r:'Psalm 118:22\u201323'}}};
+var MENTORS=[
+ {now:'Start here',h:'Learn from a tailor near you',tag:'The first door',p:'Before any school, find someone who sews and ask to learn. In Nigerian and African communities there are master tailors everywhere \u2014 and UNESCO itself called for mentoring schemes so these skills pass to the next generation. That mentor may already be in your congregation.',facts:['Ask at church, ask family, ask a local tailor','Hand-sewing first, machine second','This closes the biggest gap she named herself'],href:'https://www.youtube.com/results?search_query=learn+to+sew+for+beginners',cta:'Start learning'},
+ {h:'FIT \u2014 her target',tag:'The school',p:'FIT\u2019s art and design route usually begins with a two-year associate degree before the bachelor\u2019s. The portfolio is central, SAT and ACT are not required, and a strong B average is generally expected. Read the brief for Fashion Design specifically.',facts:['Portfolio decides almost everything','Follow the published brief exactly'],href:'https://www.fitnyc.edu/admissions/undergraduate-applicants/apply/portfolio/',cta:'Portfolio requirements'},
+ {now:'Close to home',h:'Columbus \u2014 an unexpected fashion city',tag:'Her advantage',p:'Central Ohio holds one of the largest concentrations of fashion design and merchandising jobs in America \u2014 Victoria\u2019s Secret, Abercrombie & Fitch, Express and Designer Brands are headquartered there, and Columbus College of Art & Design is in the city.',facts:['Real internships without moving to New York','A fashion degree in her own city'],href:'https://www.ccad.edu',cta:'See CCAD'},
+ {h:'Lagos Fashion Week & African fashion',tag:'Her inheritance',p:'Founded in 2011 by Omoyemi Akerele, Lagos Fashion Week has become the continent\u2019s most important fashion platform, and the place UNESCO chose to launch its first African fashion report.',facts:['The centre of the African fashion conversation','Where global buyers now look'],href:'https://lagosfashionweek.ng',cta:'Explore'},
+ {h:'Scholastic Art & Writing Awards',tag:'Get recognised',p:'A national American competition open to high-school students that accepts fashion portfolios. Real recognition, real scholarships, and a genuine credential on a college application.',facts:['Open to high-school students','Fashion is an accepted category'],href:'https://www.artandwriting.org',cta:'See the awards'},
+ {h:'Study the houses properly',tag:'Her existing strength',p:'She is already studying luxury houses \u2014 now do it like an analyst. One house a month: who founded it, what is its signature, who designs it now, and what could only this house have made.',facts:['Turns a hobby into creative-director thinking','Builds the vocabulary interviews require'],href:'https://www.businessoffashion.com',cta:'Business of Fashion'},
+ {h:'How to find a mentor of your own',tag:'Do this now',p:'Ask your art teacher. Ask at church. Ask the tailor who hems your clothes. Then be reliable, be curious, and say thank you \u2014 people invest in the faithful.',facts:['Ask teachers, church, family, local makers','Offer to help before you ask to learn'],href:'https://lagosfashionweek.ng',cta:'Keep exploring'}
+];
+
+/* ---------------- ENGINE ---------------- */
+function el(id){return document.getElementById(id);}
+function allBeats(){var a=[];for(var i=0;i<ERAS.length;i++){for(var j=0;j<ERAS[i].beats.length;j++){a.push(ERAS[i].beats[j]);}}return a;}
+function totalExplorable(){return allBeats().length+FRONTIER.length+PROBLEMS.length;}
+function readCount(){var n=0;for(var k in state.read){if(state.read[k]){n++;}}return n;}
+
+function renderHero(){el('heroName').innerHTML=state.name?state.name:'&nbsp;';
+  var pct=Math.round((readCount()/totalExplorable())*100);el('pct').innerHTML=pct+'%';el('barFill').style.width=pct+'%';
+  var mh=el('heroMission');
+  if(state.mission){var m=findMission(state.mission);mh.innerHTML='Mission: <b>'+m.h+'</b>';}
+  else{mh.innerHTML='<span style="color:#c99aa8">No mission chosen yet &mdash; find yours in <b style="color:#E4C877">Your Mission</b></span>';}}
+function findMission(id){for(var i=0;i<MISSIONS.length;i++){if(MISSIONS[i].id===id){return MISSIONS[i];}}return null;}
+
+function renderTimeline(){var box=el('timeline');box.innerHTML='';
+  for(var i=0;i<ERAS.length;i++){var era=ERAS[i];
+    var wrap=document.createElement('div');wrap.className='era';
+    var h='<div class="era-head"><span class="era-decade">'+era.decade+'</span><span class="era-theme">'+era.theme+'</span></div>';
+    for(var j=0;j<era.beats.length;j++){var b=era.beats[j];var rd=state.read[b.id]?' read':'';
+      var tagc=(b.place==='us')?'p-us':'p-int';var tagt=(b.place==='us')?'United States':'International';
+      h+='<div class="beat'+rd+'"><div class="spine"></div><div class="pulse"></div>'+
+         '<div class="mrow" data-id="'+b.id+'" data-kind="beat"><span class="yr">'+b.yr+'</span>'+
+         '<span class="mtitle">'+b.title+'<span class="tagp '+tagc+'">'+tagt+'</span></span><span class="chev">&#8250;</span></div></div>';}
+    wrap.innerHTML=h;box.appendChild(wrap);}
+  bindRows();}
+function renderFrontier(){var box=el('frontierList');box.innerHTML='';
+  for(var i=0;i<FRONTIER.length;i++){var f=FRONTIER[i];var rd=state.read[f.id]?'':'';
+    var d=document.createElement('div');d.className='fcard';d.setAttribute('data-id',f.id);d.setAttribute('data-kind','frontier');
+    d.innerHTML='<span class="ic">'+f.ic+'</span><span class="ptag '+f.tagc+'">'+f.tag+'</span><h4>'+f.h+'</h4><p>'+f.p+'</p><span class="chev">&#8250;</span>';
+    box.appendChild(d);}bindCards('frontierList');}
+function renderProblems(){var box=el('problemList');box.innerHTML='';
+  for(var i=0;i<PROBLEMS.length;i++){var p=PROBLEMS[i];
+    var d=document.createElement('div');d.className='fcard';d.setAttribute('data-id',p.id);d.setAttribute('data-kind','problem');
+    d.innerHTML='<span class="ic">'+p.ic+'</span><span class="ptag '+p.tagc+'">'+p.tag+'</span><h4>'+p.h+'</h4><p>'+p.p+'</p><span class="chev">&#8250;</span>';
+    box.appendChild(d);}bindCards('problemList');}
+function renderMentors(){var box=el('mentorList');box.innerHTML='';
+  for(var i=0;i<MENTORS.length;i++){var r=MENTORS[i];var f='';for(var j=0;j<r.facts.length;j++){f+='<p class="fact">'+r.facts[j]+'</p>';}
+    var d=document.createElement('div');d.className='res';
+    d.innerHTML=(r.now?'<span class="now">'+r.now+'</span>':'')+'<h4>'+r.h+'</h4><div class="tagline">'+r.tag+'</div><p>'+r.p+'</p>'+f+'<a href="'+r.href+'" target="_blank" rel="noopener">'+r.cta+' &rarr;</a>';
+    box.appendChild(d);}}
+function renderMission(){var box=el('missionList');box.innerHTML='';
+  var cur=el('mCurrent');
+  if(state.mission){var m=findMission(state.mission);cur.style.display='block';
+    el('mCurrentVal').innerHTML=(state.name?state.name:'I')+', your mission is <b>'+m.line+'</b>';}
+  else{cur.style.display='none';}
+  for(var i=0;i<MISSIONS.length;i++){var mo=MISSIONS[i];var sel=(state.mission===mo.id)?' sel':'';
+    var d=document.createElement('div');d.className='mopt'+sel;d.setAttribute('data-id',mo.id);
+    d.innerHTML='<h5>'+mo.h+'</h5><p>'+mo.p+'</p><span class="pick">'+(state.mission===mo.id?'Your mission':'Choose this')+'</span>';
+    box.appendChild(d);}
+  var opts=box.querySelectorAll('.mopt');
+  for(var k=0;k<opts.length;k++){opts[k].addEventListener('click',function(){chooseMission(this.getAttribute('data-id'));});}}
+
+function chooseMission(id){var changed=(state.mission!==id);state.mission=id;lsSet(K.mission,id);renderMission();renderHero();
+  if(changed){var m=findMission(id);bigBurst();toast('Mission set: '+m.h);safeSpeak((state.name?state.name+', ':'')+'your mission is '+m.line);}}
+
+/* Brief screen */
+var BRIEF_ID=null,BRIEF_KIND=null,PUSHED=false;
+function dataFor(id,kind){if(kind==='hero'){return CARSON;}
+  if(kind==='beat'){var bs=allBeats();for(var i=0;i<bs.length;i++){if(bs[i].id===id){return bs[i];}}}
+  if(kind==='frontier'){for(var j=0;j<FRONTIER.length;j++){if(FRONTIER[j].id===id){return FRONTIER[j];}}}
+  if(kind==='problem'){for(var k=0;k<PROBLEMS.length;k++){if(PROBLEMS[k].id===id){return PROBLEMS[k];}}}return null;}
+function openBrief(id,kind){var item=dataFor(id,kind);if(!item){return;}var b=item.brief;
+  var tag,title,meta;
+  if(kind==='hero'){tag='A story to carry';title=item.name;meta=item.role;}
+  else if(kind==='beat'){tag=(item.place==='us')?'USA':'World';title=item.title;meta=item.yr+' &middot; '+b.eyebrow;}
+  else if(kind==='frontier'){tag='Frontier';title=item.h;meta=b.eyebrow;}
+  else{tag='Open problem';title=item.h;meta=b.eyebrow;}
+  el('briefTag').innerHTML=tag;
+  el('briefBody').innerHTML='<div class="brief-eyebrow">'+b.eyebrow+'</div><h1 class="brief-title">'+title+'</h1><div class="brief-meta">'+meta+'</div>'+buildBlocks(b);
+  el('briefBody').scrollTop=0;
+  var foot=el('briefFoot');
+  if(kind==='problem'&&missionForProblem(id)){foot.style.display='block';setClaimBtn(id);}
+  else{foot.style.display='none';}
+  BRIEF_ID=id;BRIEF_KIND=kind;
+  if(kind!=='hero'){state.read[id]=true;saveRead();}
+  var sc=el('brief');sc.className='brief-screen open';sc.setAttribute('aria-hidden','false');bindQuiz();bindSay();
+  try{if(!PUSHED){history.pushState({b:1},'');PUSHED=true;}}catch(e){}}
+function closeBrief(fromPop){var sc=el('brief');sc.className='brief-screen';sc.setAttribute('aria-hidden','true');
+  BRIEF_ID=null;BRIEF_KIND=null;renderHero();renderTimeline();
+  if(!fromPop&&PUSHED){try{history.back();}catch(e){}PUSHED=false;}else{PUSHED=false;}}
+function missionForProblem(pid){return PMAP[pid];}
+function setClaimBtn(pid){var mid=missionForProblem(pid);var btn=el('claimBtn');
+  if(state.mission===mid){btn.className='foot-btn claimed';btn.innerHTML='&#10003; This is your mission';}
+  else{btn.className='foot-btn claim';btn.innerHTML='Make this my mission';}}
+function buildBlocks(b){var h='';
+  if(b.why){h+='<div class="blk"><p class="blk-h">&#10084; The story</p><p>'+b.why+'</p></div>';}
+  if(b.facts){var fh='';for(var i=0;i<b.facts.length;i++){fh+='<div class="factline"><b>'+b.facts[i][0]+':</b><span>'+b.facts[i][1]+'</span></div>';}h+='<div class="blk"><p class="blk-h">&#9873; Key facts</p>'+fh+'</div>';}
+  if(b.quiz){h+=buildQuiz(b.quiz);}
+  if(b.links){var lh='';for(var j=0;j<b.links.length;j++){lh+='<a class="lnk" href="'+b.links[j][1]+'" target="_blank" rel="noopener">'+b.links[j][0]+'</a>';}h+='<div class="blk"><p class="blk-h">&#128279; Go further</p>'+lh+'</div>';}
+  if(b.scrip){h+='<div class="brief-scrip"><p>&ldquo;'+b.scrip.t+'&rdquo;</p><b>'+b.scrip.r+'</b><button class="say" data-say="'+encodeURIComponent(b.scrip.t)+'">&#9654; Read aloud</button></div>';}
+  return h;}
+function buildQuiz(qs){var h='<div class="blk"><p class="blk-h">&#127919; Test yourself</p>';
+  for(var i=0;i<qs.length;i++){var q=qs[i];var opts='';for(var j=0;j<q.opts.length;j++){opts+='<button class="opt" data-q="'+i+'" data-o="'+j+'" data-a="'+q.a+'">'+q.opts[j]+'</button>';}
+    h+='<div class="q"><div class="qq">'+q.q+'</div>'+opts+'<div class="qex" data-ex="'+i+'">'+q.ex+'</div></div>';}
+  return h+'</div>';}
+
+function bindRows(){var rows=document.querySelectorAll('#timeline .mrow');
+  for(var i=0;i<rows.length;i++){rows[i].addEventListener('click',function(){openBrief(this.getAttribute('data-id'),'beat');});}}
+function bindCards(listId){var cards=document.querySelectorAll('#'+listId+' .fcard');
+  for(var i=0;i<cards.length;i++){cards[i].addEventListener('click',function(){openBrief(this.getAttribute('data-id'),this.getAttribute('data-kind'));});}}
+function bindQuiz(){var opts=el('briefBody').querySelectorAll('.opt');
+  for(var i=0;i<opts.length;i++){opts[i].addEventListener('click',function(){var qi=this.getAttribute('data-q');var chosen=parseInt(this.getAttribute('data-o'),10);var ans=parseInt(this.getAttribute('data-a'),10);
+    var group=el('briefBody').querySelectorAll('.opt[data-q="'+qi+'"]');
+    for(var j=0;j<group.length;j++){group[j].disabled=true;var oj=parseInt(group[j].getAttribute('data-o'),10);if(oj===ans){group[j].className='opt correct';}else if(oj===chosen){group[j].className='opt wrong';}}
+    var ex=el('briefBody').querySelector('.qex[data-ex="'+qi+'"]');if(ex){ex.className='qex show';}if(chosen===ans){burst();}});}}
+function bindSay(){var btns=el('briefBody').querySelectorAll('.say');for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(e){e.stopPropagation();safeSpeak(decodeURIComponent(this.getAttribute('data-say')));});}}
+
+function bindTabs(){var tabs=document.querySelectorAll('#tabs .tab');
+  for(var i=0;i<tabs.length;i++){tabs[i].addEventListener('click',function(){var v=this.getAttribute('data-v');var all=document.querySelectorAll('#tabs .tab');
+    for(var j=0;j<all.length;j++){all[j].className='tab';}this.className='tab on';var views=document.querySelectorAll('.view');for(var k=0;k<views.length;k++){views[k].className='view';}el('v-'+v).className='view on';window.scrollTo(0,0);});}}
+
+function safeSpeak(txt){try{if(!('speechSynthesis' in window)){return;}window.speechSynthesis.cancel();var u=new window.SpeechSynthesisUtterance(txt);u.rate=.92;u.pitch=1.02;window.speechSynthesis.speak(u);}catch(e){}}
+var toastT=null;function toast(m){var t=el('toast');t.innerHTML=m;t.className='show';if(toastT){clearTimeout(toastT);}toastT=setTimeout(function(){t.className='';},2400);}
+var cvs,ctx,parts=[],raf=null;
+function initFx(){cvs=el('cfx');ctx=cvs.getContext('2d');resizeFx();window.addEventListener('resize',resizeFx);}
+function resizeFx(){if(!cvs){return;}cvs.width=window.innerWidth;cvs.height=window.innerHeight;}
+function spawn(n){var colors=['#E4576E','#C4324B','#E4C877','#3FB8A0','#F5F7FA'];for(var i=0;i<n;i++){parts.push({x:cvs.width/2+(Math.random()-.5)*160,y:cvs.height*.3,vx:(Math.random()-.5)*7,vy:Math.random()*-9-3,g:.24,s:Math.random()*7+4,c:colors[(Math.random()*colors.length)|0],rot:Math.random()*6,vr:(Math.random()-.5)*.4,life:70+Math.random()*30});}if(!raf){tick();}}
+function tick(){ctx.clearRect(0,0,cvs.width,cvs.height);for(var i=parts.length-1;i>=0;i--){var p=parts[i];p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life--;
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.55);ctx.restore();if(p.life<=0||p.y>cvs.height+30){parts.splice(i,1);}}
+  if(parts.length){raf=window.requestAnimationFrame(tick);}else{raf=null;ctx.clearRect(0,0,cvs.width,cvs.height);}}
+function burst(){spawn(24);}function bigBurst(){spawn(90);}
+
+function showApp(){el('cover').style.display='none';el('app').style.display='block';renderAll();}
+function renderAll(){renderHero();renderTimeline();renderFrontier();renderProblems();renderMentors();renderMission();}
+function begin(){var nm=el('nm').value.replace(/\s+/g,' ').trim();if(!nm){el('nm').focus();el('nm').style.borderColor='#E4576E';return;}
+  state.name=nm;lsSet(K.name,nm);showApp();toast('Welcome, '+nm+'.');}
+function init(){loadState();initFx();bindTabs();
+  el('begin').addEventListener('click',begin);
+  el('nm').addEventListener('keydown',function(e){if(e.keyCode===13){begin();}});
+  el('carsonCard').addEventListener('click',function(){openBrief('carson','hero');});
+  el('backBtn').addEventListener('click',function(){closeBrief(false);});
+  window.addEventListener('popstate',function(){if(BRIEF_ID){closeBrief(true);}});
+  el('claimBtn').addEventListener('click',function(){if(BRIEF_KIND==='problem'&&BRIEF_ID){var mid=missionForProblem(BRIEF_ID);chooseMission(mid);setClaimBtn(BRIEF_ID);}});
+  el('editBtn').addEventListener('click',function(){var nm=window.prompt('Name:',state.name);if(nm!==null&&nm.replace(/\s+/g,' ').trim()){state.name=nm.replace(/\s+/g,' ').trim();lsSet(K.name,state.name);renderHero();renderMission();}});
+  if(state.name){showApp();}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+</script>
+</body>
+</html>
